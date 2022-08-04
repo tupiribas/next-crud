@@ -33,7 +33,7 @@ export function AcaoExcluir(props: AcaoBotaoProps) {
     )
 }
 
-export function AcaoAddCliente(props: AcaoBotaoProps) {
+export function Botao(props: AcaoBotaoProps) {
     const cor = props.cor ?? 'gray'
     return (
         <button className={`

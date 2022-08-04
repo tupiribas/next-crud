@@ -1,4 +1,5 @@
-import { AcaoAddCliente } from "../components/AcaoBotao";
+import { Botao } from "../components/AcaoBotao";
+import Formulario from "../components/Formulario";
 import Leyout from "../components/Leyout";
 import Tabela from "../components/Tabela";
 import Cliente from "../core/Cliente"
@@ -29,15 +30,16 @@ export default function Home() {
 
       <Leyout titulo="Cadastro Simples">
         <div className="flex justify-end">
-          <AcaoAddCliente  className="mb-4">
+          <Botao cor="green" className="mb-4">
             Novo Cliente
-          </AcaoAddCliente>
+          </Botao>
         </div>
-        <Tabela 
+        {/* <Tabela 
           clientes={clientes} 
           clienteSelecionado={clientesSelecionados}
           clienteExcluido={clientesExluidos}
-        />
+        /> */}
+        <Formulario cliente={clientes}/>
       </Leyout>
     </div>
   )
