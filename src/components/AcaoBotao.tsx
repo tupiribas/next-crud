@@ -36,7 +36,7 @@ export function AcaoExcluir(props: AcaoBotaoProps) {
 export function Botao(props: AcaoBotaoProps) {
     const cor = props.cor ?? 'gray'
     return (
-        <button className={`
+        <button onClick={props.click} className={`
             bg-gradient-to-l from-${cor}-400 to-${cor}-700
             text-white px-4 py-2 rounded-md
             ${props.className}
