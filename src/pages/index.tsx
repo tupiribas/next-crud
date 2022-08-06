@@ -23,8 +23,10 @@ export default function Home() {
   }
 
   function salvarCliente(cliente: Cliente) {
-    console.log(cliente);
-    
+    // Tempo de espera para o usuário visualizar o status após salvar ou alterar
+    setTimeout(() => {
+      setVisivel('tabela')
+    }, 2100);
   }
 
   const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela')
@@ -53,7 +55,7 @@ export default function Home() {
         ) :
         (
           <Formulario 
-            cancelado={() => setVisivel('tabela')} cliente={clientes[2]}
+            cancelado={() => setVisivel('tabela')}
             clienteMudou={salvarCliente}/>
         )}
       </Leyout>

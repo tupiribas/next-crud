@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Cliente from "../core/Cliente";
 import { Botao } from "./AcaoBotao";
-import Aviso from "./Aviso";
+import Status from "./Status";
 import Entrada from "./Entrada";
 
 interface FormularioProps {
-    cliente: Cliente;
+    cliente?: Cliente;
     clienteMudou?: (cliente: Cliente) => void;
     cancelado: () => void;
 }
@@ -18,20 +18,18 @@ export default function Formulario(props: FormularioProps) {
 
     return (
         <div>
+            {/* Será enviado uma mensagem na tela, informando o status da situação */}
             {aviso ? (
-                <Aviso 
-                    clienteAlterado={id ? true : false}
-                    cliente={props.cliente}
+                <Status
+                    valor={nome}
+                    tipoAlteracao={id ? 'salvar' : 'alterar'}
                 />
             ) : false}
             {id ? (
                 <div>   
                     <Entrada texto="Código" valor={id} tipo="text"/>
                 </div>
-            ) : (
-                `${false}`
-
-            )}
+            ) : false}
             <Entrada 
                 texto="Nome" 
                 valor={nome} 
